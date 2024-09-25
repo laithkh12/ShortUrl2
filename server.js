@@ -4,9 +4,13 @@ const ShortUrl = require('./models/shortUrl'); // Importing the ShortUrl model
 const app = express();
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://leth123khater:leth123khater@shortenurl.dla0z.mongodb.net/?retryWrites=true&w=majority&appName=ShortenURL')
-  .then(() => console.log("MongoDB connected successfully"))
-  .catch((err) => console.error("MongoDB connection error:", err));
+mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+.then(() => console.log("MongoDB connected successfully"))
+.catch((err) => console.error("MongoDB connection error:", err));
+
 
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
