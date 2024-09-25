@@ -97,6 +97,51 @@
             max-width: 100%; /* Make sure the SVG is responsive */
             height: auto; /* Maintain aspect ratio */
         }
+
+         /* Media queries for smaller screens */
+         @media (max-width: 768px) {
+            .header {
+                padding: 10px 0;
+            }
+
+            .form-inline {
+                flex-direction: column;
+            }
+
+            .form-inline input, 
+            .form-inline button {
+                width: 100%; /* Make inputs and button full-width */
+                margin-bottom: 10px;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-left, .footer-center, .footer-right {
+                flex: none;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5em;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .form-inline input {
+                font-size: 1em;
+            }
+
+            footer ul {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 
