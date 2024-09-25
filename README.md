@@ -34,3 +34,6 @@ Make sure you have the following installed on your machine:
    ```bash
    git clone https://github.com/yourusername/your-repo-name.git
    cd your-repo-name
+
+![image](https://github.com/user-attachments/assets/9701271e-bc8e-4404-8211-be19c739c824)
+
