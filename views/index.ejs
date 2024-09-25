@@ -98,8 +98,29 @@
             height: auto; /* Maintain aspect ratio */
         }
 
+        .svg-container {
+            display: flex; 
+            align-items: center; 
+            margin-bottom: 20px;
+        }
+
+        .img-with-text {
+            display: flex;
+            align-items: center;
+        }
+
          /* Media queries for smaller screens */
          @media (max-width: 768px) {
+            /* Hide the first SVG and text */
+            .img-with-text {
+                display: none; /* Hide on smaller screens */
+            }
+
+            /* Center the second SVG above the input */
+            svg {
+                margin-bottom: 20px; /* Add space below the centered SVG */
+            }
+
             .header {
                 padding: 10px 0;
             }
@@ -151,7 +172,8 @@
     </div>
 
     <div class="container">
-        <div class="svg-container" style="display: flex; align-items: center; margin-bottom: 20px;">
+        <!-- SVG and text container -->
+        <div class="svg-container" style="margin-bottom: 20px;">
             <div class="img-with-text">
                 <span style="margin-left: 20px; font-size: 1.2em;">Shorten Your URL Just In 1 Click</span>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
@@ -263,7 +285,6 @@
                     <path d="M0 0 C-2.93828597 2.50298434 -5.17902761 3.46930939 -9 4 C-9 3.34 -9 2.68 -9 2 C-5.86501708 0.14223235 -3.62528568 -0.20140476 0 0 Z " fill="#FAD99D" transform="translate(123,97)"/>
                     <path d="M0 0 C0.66 0.66 1.32 1.32 2 2 C0.71475739 2.86380259 -0.57842419 3.71580369 -1.875 4.5625 C-2.59429687 5.03816406 -3.31359375 5.51382813 -4.0546875 6.00390625 C-4.69664062 6.33261719 -5.33859375 6.66132812 -6 7 C-6.66 6.67 -7.32 6.34 -8 6 C-5.36 4.02 -2.72 2.04 0 0 Z " fill="#F5E9CD" transform="translate(186,62)"/>
                     </svg>
-                    
             </div>
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="733" height="482">
                 <path d="M0 0 C241.89 0 483.78 0 733 0 C733 159.06 733 318.12 733 482 C491.11 482 249.22 482 0 482 C0 322.94 0 163.88 0 0 Z " fill="#FDFDFE" transform="translate(0,0)"/>
@@ -452,8 +473,10 @@
                 <path d="M0 0 C0.99 0 1.98 0 3 0 C2.67 1.65 2.34 3.3 2 5 C1.01 5 0.02 5 -1 5 C-0.67 3.35 -0.34 1.7 0 0 Z " fill="#0A68DD" transform="translate(201,321)"/>
                 <path d="M0 0 C0.66 0.33 1.32 0.66 2 1 C2.40729228 3.32156597 2.74438677 5.6568787 3 8 C2.01 7.01 1.02 6.02 0 5 C-0.99 5.495 -0.99 5.495 -2 6 C-1.34 4.02 -0.68 2.04 0 0 Z " fill="#C8D7EE" transform="translate(455,369)"/>
                 <path d="M0 0 C0.66 0.33 1.32 0.66 2 1 C2 2.65 2 4.3 2 6 C1.01 6.33 0.02 6.66 -1 7 C-1.04254356 5.00045254 -1.04080783 2.99958364 -1 1 C-0.67 0.67 -0.34 0.34 0 0 Z " fill="#233361" transform="translate(435,303)"/>
-                </svg>  
+                </svg>
+                
         </div>
+
         <form action="/shortUrls" method="post" class="form-inline">
             <label for="fullUrl" class="sr-only">Original URL</label>
             <input 
