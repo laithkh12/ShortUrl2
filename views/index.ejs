@@ -109,60 +109,64 @@
             align-items: center;
         }
 
-         /* Media queries for smaller screens */
-         @media (max-width: 768px) {
-            /* Hide the first SVG and text */
-            .img-with-text {
-                display: none; /* Hide on smaller screens */
-            }
+        @media (max-width: 768px) {
+    /* Hide the first SVG and text */
+    .img-with-text {
+        display: none;
+    }
 
-            /* Center the second SVG above the input */
-            svg {
-                margin-bottom: 20px; /* Add space below the centered SVG */
-            }
+    /* Make the second SVG smaller */
+    svg {
+        width: 50%; /* Reduce width to 50% of the container */
+        margin-bottom: 20px; /* Add space below the centered SVG */
+    }
 
-            .header {
-                padding: 10px 0;
-            }
+    .form-inline {
+        flex-direction: column;
+        justify-content: center;
+    }
 
-            .form-inline {
-                flex-direction: column;
-            }
+    .form-inline input,
+    .form-inline button {
+        width: 100%; /* Make inputs and button full-width */
+        margin-bottom: 10px;
+    }
 
-            .form-inline input, 
-            .form-inline button {
-                width: 100%; /* Make inputs and button full-width */
-                margin-bottom: 10px;
-            }
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
 
-            footer {
-                flex-direction: column;
-                text-align: center;
-            }
+    .footer-left, .footer-center, .footer-right {
+        flex: none;
+        text-align: center;
+    }
+}
 
-            .footer-left, .footer-center, .footer-right {
-                flex: none;
-                text-align: center;
-            }
-        }
+@media (max-width: 480px) {
+    /* Further reduce the size of the second SVG */
+    svg {
+        width: 30%; /* Reduce width to 30% for even smaller screens */
+        margin-bottom: 20px;
+    }
 
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.5em;
-            }
+    .header h1 {
+        font-size: 1.5em;
+    }
 
-            .container {
-                padding: 10px;
-            }
+    .container {
+        padding: 10px;
+    }
 
-            .form-inline input {
-                font-size: 1em;
-            }
+    .form-inline input {
+        font-size: 1em;
+    }
 
-            footer ul {
-                flex-direction: column;
-            }
-        }
+    footer ul {
+        flex-direction: column;
+    }
+}
+
     </style>
 </head>
 
